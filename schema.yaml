@@ -1,0 +1,111 @@
+title:            "Install Grafana"
+description:      "Test to install Grafana"
+stackDescription: "ADD SOME DETAIL ie  Deployed on a new Compute Instance applying necessary Dynamic Groups and Policies."
+version:          "20190304"
+schemaVersion:     1.1.0
+locale:           "en"
+
+#source:
+ # type: quickstart
+
+variableGroups:
+  - title: "Hidden Variable Group"
+    visible: false
+    variables:
+      - tenancy_ocid
+      - region
+
+  - title: "Compartment Configuration"
+    visible: true
+    variables:
+      - compartment_ocid
+
+  - title: "Network Configuration"
+    visible: true
+    variables:
+      - vcn_ocid
+      - subnet_ocid
+
+  - title: "Compute Instance Configuration"
+    visible: true
+    variables:
+      - instance_name
+      - availability_domain
+      - instance_shape
+      - ssh_public_key
+
+  - title: "Name of the Dynamic Group"
+    visible: true
+    variables:
+      - dynamic_group_name
+
+ - title: "Name of the Policy Group"
+    visible: true
+    variables:
+      - group_name
+
+
+
+variables:
+   compartment_ocid:
+    type: oci:identity:compartment:id
+    required: true
+    title: "Compartment OCID"
+    description: "OCID of the compartment to create the instance in"
+
+  vcn_ocid:
+    type: oci:core:vcn:id
+    required: true
+    title: "VCN OCID"
+    description: "OCID of the VCN"
+
+  subnet_ocid:
+    type: oci:core:subnet:id
+    required: true
+    title: "Subnet OCID"
+    description: "OCID of the subnet to use"
+
+  instance_shape:
+    type: oci:core:instanceshape:name
+    required: true
+    title: "Instance Shape"
+    description: "Shape of the instance"
+
+  instance_ocpus:
+    type: integer
+    required: true
+    minimum: 1
+    title: "Instance OCPUs"
+    description: "Number of OCPUs for the instance"
+
+  instance_memory:
+    type: integer
+    required: true
+    minimum: 1
+    title: "Instance Memory (in GB)"
+    description: "Amount of memory in GB for the instance"
+
+  image_ocid:
+    type: oci:core:image:id
+    required: true
+    title: "Image OCID"
+    description: "OCID of the image to use"
+
+  ssh_public_key:
+    type: string
+    required: true
+    title: "SSH Public Key"
+    description: "SSH public key for instance access"
+
+  dynamic_group_name:
+    type: string
+    required: true
+    title: "Dynamic Group Name"
+    description: "The name of the dynamic group"
+
+  group_name:
+    type: string
+    required: true
+    title: "Policy Name"
+    description: "The name of the Policy"
+
