@@ -39,7 +39,7 @@ variableGroups:
     variables:
       - dynamic_group_name
 
- - title: "Name of the Policy Group"
+  - title: "Name of the Policy Group"
     visible: true
     variables:
       - group_name
