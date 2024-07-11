@@ -47,7 +47,7 @@ variableGroups:
 
 
 variables:
-   compartment_ocid:
+  compartment_ocid:
     type: oci:identity:compartment:id
     required: true
     title: "Compartment OCID"
