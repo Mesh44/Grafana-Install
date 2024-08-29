@@ -55,7 +55,7 @@ Gather the following information before deployment:
    - Instance Configuration:
      - Hostname
      - Linux Image (Oracle-Linux-8.9-2024.05.29-0 recommended and tested)
-     - Linux Instance Shape (Choose from list, to suite monitoring requirements)
+     - Linux Instance Shape (Choose from list, to suite your monitoring requirements). Minimum requirements; memory:512MB, CPU:1.
      - Number of OCPUs (for flexible shapes)
      - Memory in GBs (for flexible shapes)
      - Assign Public IP (default: true)
@@ -98,14 +98,14 @@ Gather the following information before deployment:
 ### Adding Custom Dashboards
 
 After deployment, you can import custom dashboards in Grafana to visualise your OCI metrics.
-Steps:
+All dashboards are located in the Dashboards directory (Provide Github link)
 
 1. Step a
 
 ## Troubleshooting
 
 1. **Cannot access Grafana**: Verify that port 3000 is open in your VCN's security list and the instance's firewall.
-2. **OCI Monitoring datasource not working**: Check that the dynamic group and policies are correctly configured to allow metric reading.
+2. **OCI Monitoring Data Source not working**: Check that the dynamic group and policies are correctly configured to allow metric reading.
 
 ## Support and Contribution
 
